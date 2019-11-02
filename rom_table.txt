@@ -1,7 +1,7 @@
 
 
 state		fetch	ırld	mux	ld	pcınc	imm
-0(fetch)	1	1	0	0	0	0		0x30
-1(alu)		0	0	0	1	0	0		0x04
+0(fetch)	1	1	0	0	1	0		0x32
+1(alu)		0	0	0	1	0	0		0x4
 2(ldi)		0	0	1	1	1	0		0x0e
 3(aluimm)	0	0	0	1	1	1		0x07
