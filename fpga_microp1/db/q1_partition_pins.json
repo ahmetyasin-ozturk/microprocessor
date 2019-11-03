@@ -1,0 +1,29 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "grounds[0]",
+					"strict" : false
+				},
+				{
+					"name" : "grounds[1]",
+					"strict" : false
+				},
+				{
+					"name" : "grounds[2]",
+					"strict" : false
+				},
+				{
+					"name" : "grounds[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

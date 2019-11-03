@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -1.260
+TNS   : -10.600
+
+Type  : Slow 1200mV 85C Model Setup 'sev_seg_disp:ssd|clk1[15]'
+Slack : 0.222
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.361
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'sev_seg_disp:ssd|clk1[15]'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -19.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sev_seg_disp:ssd|clk1[15]'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -0.988
+TNS   : -7.667
+
+Type  : Slow 1200mV 0C Model Setup 'sev_seg_disp:ssd|clk1[15]'
+Slack : 0.300
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.320
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'sev_seg_disp:ssd|clk1[15]'
+Slack : 0.347
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -19.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sev_seg_disp:ssd|clk1[15]'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -0.516
+TNS   : -0.746
+
+Type  : Fast 1200mV 0C Model Setup 'sev_seg_disp:ssd|clk1[15]'
+Slack : 0.566
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'sev_seg_disp:ssd|clk1[15]'
+Slack : 0.205
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -19.992
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sev_seg_disp:ssd|clk1[15]'
+Slack : -1.000
+TNS   : -4.000
+
+------------------------------------------------------------
