@@ -213,7 +213,7 @@ int main()
             {
                     op1 = strtok(NULL,"\n\t\r ");
                     op2 = strtok(NULL,"\n\t\r ");
-                    ch = (op1[0]-48)| ((op2[0]-48)<<3);
+                    ch = (op1[0]-48)| ((op2[0]-48)<<6);
                     program[counter]=0x1500+((ch)&0x00ff);
                     counter++;
             }
