@@ -3,7 +3,7 @@
 //FirstCPU first_cpu(.clk(clk),.grounds(grounds),.display(display));
 
 
-module FirstCPU(input wire clk, output wire [3:0] grounds, output wire [6:0] display);
+module FirstCPU(input wire clk, input wire buttn, output wire [3:0] grounds, output wire [6:0] display);
 
 reg [1:0] state;
 reg [15:0] memory[0:511];
@@ -51,10 +51,11 @@ localparam  ALUIMM = 2'b11;
 
 		  
 assign aluinl=regbank[ir[7:6]];
-assign aluinr = (state == ALUIMM) ? regbank[ir[4:3]] : memory[pc];
+assign aluinr = (state == ALUIMM) ? memory[pc] : regbank[ir[4:3]];
 assign aluop=ir[11:8];
 
-sev_seg_disp ssd(.din(regbank[0]), .grounds(grounds), .display(display), .clk(clk));
+//sev_seg_disp ssd(.din(regbank[0]), .grounds(grounds), .display(display), .clk(clk));
+
 	
 always @*
     case( aluop )
@@ -70,9 +71,11 @@ always @*
         default: aluout = 0;
     endcase
 
+sev_seg_disp ssd(.din(regbank[0]), .grounds(grounds), .display(display), .clk(buttn));
 initial begin
-  //   $readmemh("prog.txt", memory);  //must be exactly 512 locations
+     $readmemh("RAM", memory);  //must be exactly 512 locations
      state = FETCH;
+	  
  end
 
 endmodule
@@ -101,23 +104,23 @@ always @(posedge clk)
 
 always @(*)
     case(data[count])
-        0:display=7'b1111110; 	//	a	starts with a, ends with g
-        1:display=7'b0110000;		 
-        2:display=7'b1101101;
-        3:display=7'b1111001;
-        4:display=7'b0110011;
-        5:display=7'b1011011;
-        6:display=7'b1011111;
-        7:display=7'b1110000;
-        8:display=7'b1111111;
-        9:display=7'b1111011;
-        'ha:display=7'b1110111;
-        'hb:display=7'b0011111;
-        'hc:display=7'b1001110;
-        'hd:display=7'b0111101;
-        'he:display=7'b1001111;
-        'hf:display=7'b1000111;
-        default display=7'b1111111;
+        0:display=~(7'b1111110); 	//	starts with a, ends with g
+        1:display=~(7'b0110000);		 
+        2:display=~(7'b1101101);
+        3:display=~(7'b1111001);
+        4:display=~(7'b0110011);
+        5:display=~(7'b1011011);
+        6:display=~(7'b1011111);
+        7:display=~(7'b1110000);
+        8:display=~(7'b1111111);
+        9:display=~(7'b1111011);
+        'ha:display=~(7'b1110111);
+        'hb:display=~(7'b0011111);
+        'hc:display=~(7'b1001110);
+        'hd:display=~(7'b0111101);
+        'he:display=~(7'b1001111);
+        'hf:display=~(7'b1000111);
+        default display=~(7'b1111111);
     endcase
 
   always @*
@@ -129,12 +132,12 @@ always @(*)
     end
 
 initial begin
-//    data[0]=4'h1;
-//    data[1]=4'h9;
-//    data[2]=4'ha;
-//    data[3]=4'hc;
+    /*data[0]=4'h1;
+    data[1]=4'h9;
+    data[2]=4'ha;
+    data[3]=4'hc;*/
     count = 2'b0;
-    grounds=4'b1110;
+    grounds=4'b0001;
     clk1=0;
 end
 

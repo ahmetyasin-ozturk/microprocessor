@@ -3,75 +3,111 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -5.402
+TNS   : -347.499
+
+Type  : Slow 1200mV 85C Model Setup 'buttn'
 Slack : -1.260
-TNS   : -10.600
+TNS   : -10.604
 
 Type  : Slow 1200mV 85C Model Setup 'sev_seg_disp:ssd|clk1[15]'
-Slack : 0.222
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.361
+Slack : 0.219
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'sev_seg_disp:ssd|clk1[15]'
-Slack : 0.391
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'buttn'
+Slack : 0.361
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.385
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -88.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'buttn'
 Slack : -3.000
 TNS   : -19.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sev_seg_disp:ssd|clk1[15]'
 Slack : -1.000
-TNS   : -4.000
+TNS   : -6.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -0.988
-TNS   : -7.667
+Slack : -4.781
+TNS   : -303.934
+
+Type  : Slow 1200mV 0C Model Setup 'buttn'
+Slack : -0.989
+TNS   : -7.689
 
 Type  : Slow 1200mV 0C Model Setup 'sev_seg_disp:ssd|clk1[15]'
-Slack : 0.300
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.320
+Slack : 0.298
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'sev_seg_disp:ssd|clk1[15]'
-Slack : 0.347
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'buttn'
+Slack : 0.319
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.341
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -88.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'buttn'
 Slack : -3.000
 TNS   : -19.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sev_seg_disp:ssd|clk1[15]'
 Slack : -1.000
-TNS   : -4.000
+TNS   : -6.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.516
-TNS   : -0.746
+Slack : -2.674
+TNS   : -161.746
+
+Type  : Fast 1200mV 0C Model Setup 'buttn'
+Slack : -0.466
+TNS   : -0.692
 
 Type  : Fast 1200mV 0C Model Setup 'sev_seg_disp:ssd|clk1[15]'
-Slack : 0.566
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.193
+Slack : 0.564
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'sev_seg_disp:ssd|clk1[15]'
-Slack : 0.205
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'buttn'
+Slack : 0.194
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.208
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -19.992
+TNS   : -98.341
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'buttn'
+Slack : -3.000
+TNS   : -19.972
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sev_seg_disp:ssd|clk1[15]'
 Slack : -1.000
-TNS   : -4.000
+TNS   : -6.000
 
 ------------------------------------------------------------

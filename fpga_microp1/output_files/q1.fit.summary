@@ -1,15 +1,15 @@
-Fitter Status : Successful - Sun Nov 03 22:13:32 2019
+Fitter Status : Successful - Mon Nov 04 17:20:55 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : q1
 Top-level Entity Name : FirstCPU
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 20 / 22,320 ( < 1 % )
-    Total combinational functions : 18 / 22,320 ( < 1 % )
-    Dedicated logic registers : 20 / 22,320 ( < 1 % )
-Total registers : 20
-Total pins : 12 / 154 ( 8 % )
+Total logic elements : 288 / 22,320 ( 1 % )
+    Total combinational functions : 267 / 22,320 ( 1 % )
+    Dedicated logic registers : 107 / 22,320 ( < 1 % )
+Total registers : 107
+Total pins : 13 / 154 ( 8 % )
 Total virtual pins : 0
 Total memory bits : 0 / 608,256 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
