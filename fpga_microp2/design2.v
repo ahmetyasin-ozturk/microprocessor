@@ -3,32 +3,27 @@
 module design2(grounds, display, clk);
 
 output reg [3:0] grounds;
+reg [3:0] grounds_before;
 output reg [6:0] display;
 input clk; 
 
-reg [3:0] number[0:19];
+reg [3:0] number[0:20];
 
-/*
-reg [15:0] memory[0:511];
-memory[pc][13:12]
-*/
-
-reg [15:0] time_counter;
 reg [4:0] id_counter;
+reg [4:0] last_counter_datas [4:0];
 reg [3:0] data [3:0] ; //number to be printed on display
 reg [1:0] count;       //which data byte to display.
 reg [25:0] clk1;
 reg [25:0] clk2;
 
 initial begin
-    /*data[0]=4'h1;
-    data[1]=4'h9;
+    data[0]=4'ha;
+    data[1]=4'ha;
     data[2]=4'ha;
-    data[3]=4'hc;*/
+    data[3]=4'ha;
 	 id_counter = 0;
     count = 2'b0;
     grounds=4'b0001;
-	 time_counter=0;
     clk1=0;
 	 number[0] = 4'h1;
 	 number[1] = 4'h5;
@@ -52,39 +47,45 @@ initial begin
 	 
 	 number[16] = 4'h0;
 	 number[17] = 4'h7;
-	 number[18] = 4'hf;		// 07FF
-	 number[19] = 4'hf;
+	 number[18] = 4'h1;
+	 number[19] = 4'h5;
+	 number[20] = 4'h0;
 
 end
 
 always @(posedge clk2[25])
 begin
 	
-	data [0] = number[id_counter];
-	data [1] = number[id_counter+1];
-	data [2] = number[id_counter+2];
-	data [3] = number[id_counter+3];
-	id_counter=id_counter+4;
-	if(id_counter == 20)
+	
+	data[0]=number[id_counter];
+	data[1]=number[id_counter+1];
+	data[2]=number[id_counter+2];
+	data[3]=number[id_counter+3];
+	id_counter = id_counter+1;
+	if(id_counter == 18)
 	begin
-		id_counter=0;
+		id_counter = 0;
 	end
-
+	
 end
 
+
 always @(posedge clk)
-    clk2<=clk2+1;
+begin
+	 clk1<=clk1+1;
+end
 
 always @(posedge clk1[15]) //25 slow //19 wavy //15 perfect
 begin
     grounds<={grounds[2:0],grounds[3]};
-	 
-
-	count<=count+1;
+	 count<=count+1;
 end
 
 always @(posedge clk)
-    clk1<=clk1+1;
+begin
+    clk2<=clk2+1;
+end
+    
 
 always @(*)
     case(data[count])
