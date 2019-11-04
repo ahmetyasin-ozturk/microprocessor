@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at design2.v(54): always construct contains both blocking and non-blocking assignments File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 54
