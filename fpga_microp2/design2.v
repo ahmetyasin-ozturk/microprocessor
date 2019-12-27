@@ -16,6 +16,9 @@ reg [1:0] count;       //which data byte to display.
 reg [25:0] clk1;
 reg [25:0] clk2;
 
+wire a,b,c;
+reg foo;
+
 initial begin
     data[0]=4'ha;
     data[1]=4'ha;
@@ -51,6 +54,14 @@ initial begin
 	 number[19] = 4'h5;
 	 number[20] = 4'h0;
 
+end
+
+always @(a or b or c)
+begin
+if(a)
+	foo = b^c;
+else
+	foo = b|c;
 end
 
 always @(posedge clk2[25])

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for q2
-Tue Nov 05 00:35:14 2019
+Thu Nov 14 00:07:38 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -45,7 +45,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 05 00:35:14 2019       ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 14 00:07:38 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; q2                                          ;
 ; Top-level Entity Name              ; design2                                     ;
@@ -308,17 +308,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Nov 05 00:35:03 2019
+    Info: Processing started: Thu Nov 14 00:07:25 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off q2 -c q2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file design2.v
     Info (12023): Found entity 1: design2 File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 3
 Info (12127): Elaborating entity "design2" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at design2.v(64): truncated value with size 32 to match size of target (5) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 64
-Warning (10230): Verilog HDL assignment warning at design2.v(75): truncated value with size 32 to match size of target (26) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 75
-Warning (10230): Verilog HDL assignment warning at design2.v(81): truncated value with size 32 to match size of target (2) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 81
+Warning (10858): Verilog HDL warning at design2.v(19): object a used but never assigned File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 19
+Warning (10858): Verilog HDL warning at design2.v(19): object b used but never assigned File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 19
+Warning (10858): Verilog HDL warning at design2.v(19): object c used but never assigned File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 19
+Warning (10036): Verilog HDL or VHDL warning at design2.v(20): object "foo" assigned a value but never read File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 20
+Warning (10230): Verilog HDL assignment warning at design2.v(75): truncated value with size 32 to match size of target (5) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 75
 Warning (10230): Verilog HDL assignment warning at design2.v(86): truncated value with size 32 to match size of target (26) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 86
+Warning (10230): Verilog HDL assignment warning at design2.v(92): truncated value with size 32 to match size of target (2) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 92
+Warning (10230): Verilog HDL assignment warning at design2.v(97): truncated value with size 32 to match size of target (26) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 97
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 10 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -327,10 +331,10 @@ Info (21057): Implemented 117 device resources after synthesis - the final resou
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 11 output pins
     Info (21061): Implemented 105 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4785 megabytes
-    Info: Processing ended: Tue Nov 05 00:35:14 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:25
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4784 megabytes
+    Info: Processing ended: Thu Nov 14 00:07:38 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:28
 
 

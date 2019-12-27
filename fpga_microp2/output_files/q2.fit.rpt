@@ -1,5 +1,5 @@
 Fitter report for q2
-Tue Nov 05 00:35:21 2019
+Thu Nov 14 00:07:46 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Nov 05 00:35:21 2019       ;
+; Fitter Status                      ; Successful - Thu Nov 14 00:07:46 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; q2                                          ;
 ; Top-level Entity Name              ; design2                                     ;
@@ -159,8 +159,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.4%      ;
-;     Processors 3-4         ;   0.4%      ;
+;     Processor 2            ;   0.5%      ;
+;     Processors 3-4         ;   0.5%      ;
 +----------------------------+-------------+
 
 
@@ -1041,14 +1041,14 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node clk~input (placed in PIN R8 (CLK15, DIFFCLK_6p)) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 8
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G18
-Info (176353): Automatically promoted node clk2[25]  File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 84
+Info (176353): Automatically promoted node clk2[25]  File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 95
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node clk2[25]~73 File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 84
-Info (176353): Automatically promoted node clk1[15]  File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 73
+        Info (176357): Destination node clk2[25]~73 File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 95
+Info (176353): Automatically promoted node clk1[15]  File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 84
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node clk1[15]~43 File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 73
+        Info (176357): Destination node clk1[15]~43 File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/design2.v Line: 84
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -1065,7 +1065,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.21 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.24 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1073,10 +1073,10 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp2/output_files/q2.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 5533 megabytes
-    Info: Processing ended: Tue Nov 05 00:35:21 2019
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Peak virtual memory: 5524 megabytes
+    Info: Processing ended: Thu Nov 14 00:07:46 2019
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:10
 
 
 +----------------------------+

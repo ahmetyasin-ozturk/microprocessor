@@ -92,17 +92,17 @@ clk => regbank[0][15].CLK
 clk => state[0].CLK
 clk => state[1].CLK
 buttn => buttn.IN1
-grounds[0] <= sev_seg_disp:ssd.grounds
-grounds[1] <= sev_seg_disp:ssd.grounds
-grounds[2] <= sev_seg_disp:ssd.grounds
-grounds[3] <= sev_seg_disp:ssd.grounds
-display[0] <= sev_seg_disp:ssd.display
-display[1] <= sev_seg_disp:ssd.display
-display[2] <= sev_seg_disp:ssd.display
-display[3] <= sev_seg_disp:ssd.display
-display[4] <= sev_seg_disp:ssd.display
-display[5] <= sev_seg_disp:ssd.display
-display[6] <= sev_seg_disp:ssd.display
+grounds[0] << sev_seg_disp:ssd.grounds
+grounds[1] << sev_seg_disp:ssd.grounds
+grounds[2] << sev_seg_disp:ssd.grounds
+grounds[3] << sev_seg_disp:ssd.grounds
+display[0] << sev_seg_disp:ssd.display
+display[1] << sev_seg_disp:ssd.display
+display[2] << sev_seg_disp:ssd.display
+display[3] << sev_seg_disp:ssd.display
+display[4] << sev_seg_disp:ssd.display
+display[5] << sev_seg_disp:ssd.display
+display[6] << sev_seg_disp:ssd.display
 
 
 |FirstCPU|sev_seg_disp:ssd

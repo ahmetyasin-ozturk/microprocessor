@@ -1,5 +1,5 @@
 Timing Analyzer report for q1
-Mon Nov 04 17:21:01 2019
+Fri Dec 06 11:49:01 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -108,14 +108,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.42        ;
+; Average used               ; 1.46        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  14.1%      ;
-;     Processor 3            ;  13.9%      ;
-;     Processor 4            ;  13.7%      ;
+;     Processor 2            ;  15.7%      ;
+;     Processor 3            ;  15.4%      ;
+;     Processor 4            ;  15.2%      ;
 +----------------------------+-------------+
 
 
@@ -246,8 +246,8 @@ No paths to report.
 ; -5.152 ; pc[8]          ; regbank[2][10] ; clk          ; clk         ; 1.000        ; -0.351     ; 5.816      ;
 ; -5.149 ; pc[5]          ; regbank[1][12] ; clk          ; clk         ; 1.000        ; -0.081     ; 6.083      ;
 ; -5.148 ; pc[8]          ; regbank[1][12] ; clk          ; clk         ; 1.000        ; -0.081     ; 6.082      ;
-; -5.147 ; pc[1]          ; regbank[2][9]  ; clk          ; clk         ; 1.000        ; -0.057     ; 6.105      ;
 ; -5.147 ; pc[2]          ; regbank[0][12] ; clk          ; clk         ; 1.000        ; -0.046     ; 6.116      ;
+; -5.147 ; pc[1]          ; regbank[2][9]  ; clk          ; clk         ; 1.000        ; -0.057     ; 6.105      ;
 ; -5.142 ; pc[1]          ; regbank[0][9]  ; clk          ; clk         ; 1.000        ; -0.046     ; 6.111      ;
 ; -5.135 ; pc[5]          ; regbank[1][5]  ; clk          ; clk         ; 1.000        ; -0.360     ; 5.790      ;
 ; -5.134 ; pc[5]          ; regbank[1][8]  ; clk          ; clk         ; 1.000        ; -0.026     ; 6.123      ;
@@ -579,8 +579,8 @@ No paths to report.
 ; 0.950 ; pc[1]          ; ir[8]          ; clk          ; clk         ; 0.000        ; 0.020      ; 1.127      ;
 ; 0.952 ; pc[2]          ; ir[8]          ; clk          ; clk         ; 0.000        ; 0.020      ; 1.129      ;
 ; 0.998 ; pc[3]          ; pc[5]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.197      ;
-; 1.000 ; pc[3]          ; pc[6]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.199      ;
 ; 1.000 ; pc[1]          ; pc[3]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.199      ;
+; 1.000 ; pc[3]          ; pc[6]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.199      ;
 ; 1.000 ; pc[7]          ; ir[8]          ; clk          ; clk         ; 0.000        ; 0.020      ; 1.177      ;
 ; 1.001 ; pc[5]          ; pc[6]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.200      ;
 ; 1.002 ; pc[1]          ; pc[4]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.201      ;
@@ -596,8 +596,8 @@ No paths to report.
 ; 1.032 ; pc[0]          ; pc[4]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.231      ;
 ; 1.110 ; pc[3]          ; pc[7]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.309      ;
 ; 1.111 ; pc[5]          ; pc[7]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.310      ;
-; 1.112 ; pc[3]          ; pc[8]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.311      ;
 ; 1.112 ; pc[1]          ; pc[5]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.311      ;
+; 1.112 ; pc[3]          ; pc[8]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.311      ;
 ; 1.113 ; pc[5]          ; pc[8]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.312      ;
 ; 1.114 ; pc[1]          ; pc[6]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.313      ;
 ; 1.130 ; pc[2]          ; pc[7]          ; clk          ; clk         ; 0.000        ; 0.042      ; 1.329      ;
@@ -819,8 +819,8 @@ No paths to report.
 ; -4.418 ; pc[4]         ; regbank[2][9]  ; clk          ; clk         ; 1.000        ; -0.052     ; 5.381      ;
 ; -4.414 ; pc[0]         ; regbank[0][14] ; clk          ; clk         ; 1.000        ; -0.045     ; 5.384      ;
 ; -4.412 ; ir[4]         ; regbank[2][10] ; clk          ; clk         ; 1.000        ; -0.342     ; 5.085      ;
-; -4.409 ; pc[1]         ; regbank[1][5]  ; clk          ; clk         ; 1.000        ; -0.330     ; 5.094      ;
 ; -4.409 ; pc[4]         ; regbank[0][9]  ; clk          ; clk         ; 1.000        ; -0.045     ; 5.379      ;
+; -4.409 ; pc[1]         ; regbank[1][5]  ; clk          ; clk         ; 1.000        ; -0.330     ; 5.094      ;
 ; -4.409 ; ir[4]         ; regbank[1][12] ; clk          ; clk         ; 1.000        ; -0.068     ; 5.356      ;
 ; -4.408 ; ir[3]         ; regbank[2][14] ; clk          ; clk         ; 1.000        ; -0.071     ; 5.352      ;
 +--------+---------------+----------------+--------------+-------------+--------------+------------+------------+
@@ -1622,8 +1622,8 @@ No paths to report.
 ; 0.537 ; pc[6]          ; pc[7]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.645      ;
 ; 0.540 ; pc[6]          ; pc[8]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.648      ;
 ; 0.542 ; pc[3]          ; pc[5]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.650      ;
-; 0.545 ; pc[1]          ; pc[3]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.653      ;
 ; 0.545 ; pc[3]          ; pc[6]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.653      ;
+; 0.545 ; pc[1]          ; pc[3]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.653      ;
 ; 0.548 ; pc[1]          ; pc[4]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.656      ;
 ; 0.549 ; pc[7]          ; ir[8]          ; clk          ; clk         ; 0.000        ; 0.013      ; 0.646      ;
 ; 0.552 ; pc[4]          ; pc[7]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.660      ;
@@ -1635,8 +1635,8 @@ No paths to report.
 ; 0.597 ; pc[5]          ; pc[7]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.705      ;
 ; 0.600 ; pc[5]          ; pc[8]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.708      ;
 ; 0.608 ; pc[3]          ; pc[7]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.716      ;
-; 0.611 ; pc[1]          ; pc[5]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.719      ;
 ; 0.611 ; pc[3]          ; pc[8]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.719      ;
+; 0.611 ; pc[1]          ; pc[5]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.719      ;
 ; 0.614 ; pc[1]          ; pc[6]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.722      ;
 ; 0.625 ; pc[2]          ; pc[7]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.733      ;
 ; 0.628 ; pc[2]          ; pc[8]          ; clk          ; clk         ; 0.000        ; 0.024      ; 0.736      ;
@@ -1681,8 +1681,8 @@ No paths to report.
 ; 0.823 ; ir[9]          ; regbank[3][14] ; clk          ; clk         ; 0.000        ; 0.018      ; 0.925      ;
 ; 0.825 ; pc[0]          ; ir[9]          ; clk          ; clk         ; 0.000        ; 0.073      ; 0.982      ;
 ; 0.828 ; state[0]       ; regbank[3][5]  ; clk          ; clk         ; 0.000        ; 0.028      ; 0.940      ;
-; 0.830 ; pc[4]          ; ir[11]         ; clk          ; clk         ; 0.000        ; 0.052      ; 0.966      ;
 ; 0.830 ; pc[3]          ; regbank[3][5]  ; clk          ; clk         ; 0.000        ; 0.034      ; 0.948      ;
+; 0.830 ; pc[4]          ; ir[11]         ; clk          ; clk         ; 0.000        ; 0.052      ; 0.966      ;
 ; 0.834 ; pc[4]          ; ir[4]          ; clk          ; clk         ; 0.000        ; 0.052      ; 0.970      ;
 ; 0.835 ; pc[1]          ; ir[10]         ; clk          ; clk         ; 0.000        ; 0.043      ; 0.962      ;
 ; 0.836 ; pc[4]          ; ir[10]         ; clk          ; clk         ; 0.000        ; 0.043      ; 0.963      ;
@@ -1919,7 +1919,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Nov 04 17:20:59 2019
+    Info: Processing started: Fri Dec 06 11:48:57 2019
 Info: Command: quartus_sta q1 -c q1
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -2011,9 +2011,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4788 megabytes
-    Info: Processing ended: Mon Nov 04 17:21:01 2019
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4786 megabytes
+    Info: Processing ended: Fri Dec 06 11:49:01 2019
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 
 
