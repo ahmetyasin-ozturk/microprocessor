@@ -44,7 +44,7 @@ int main()
             {
                     op1 = strtok(NULL,"\n\t\r ");                                //get the 1st operand of ldi, which is the register that ldi loads
                     op2 = strtok(NULL,"\n\t\r ");                                //get the 2nd operand of ldi, which is the data that is to be loaded
-                    program[counter]=0x2000+hex2int(op1);                        //generate the first 16-bit of the ldi instruction
+                    program[counter]=0x1000+hex2int(op1);                        //generate the first 16-bit of the ldi instruction
                     counter++;                                                   //move to the second 16-bit of the ldi instruction
                     if ((op2[0]=='0')&&(op2[1]=='x'))                            //if the 2nd operand is twos complement hexadecimal
                         program[counter]=hex2int(op2+2)&0xffff;              //convert it to integer and form the second 16-bit 
@@ -62,7 +62,7 @@ int main()
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
                     chch = (op1[0]-48)| ((op2[0]-48)<<6)|((op3[0]-48)<<3);
-                    program[counter]=0x1000+((chch)&0x00ff);
+                    program[counter]=0x7000+((chch)&0x00ff);
                     counter++; 
             }
             else if (strcmp(token,"addi")==0)
@@ -71,7 +71,7 @@ int main()
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
                     ch = (op1[0]-48)|((op2[0]-48)<<6);
-                    program[counter]=0x3000+((ch)&0x00ff);
+                    program[counter]=0x6000+((ch)&0x00ff);
                     counter++;
 					if ((op3[0]=='0')&&(op3[1]=='x')){
 						program[counter]=hex2int(op3+2)&0xffff;
@@ -92,7 +92,7 @@ int main()
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
                     chch = (op1[0]-48)| ((op2[0]-48)<<6)|((op3[0]-48)<<3);
-                    program[counter]=0x1100+((chch)&0x00ff);
+                    program[counter]=0x7100+((chch)&0x00ff);
                     counter++; 
                     //to be added
             }
@@ -102,7 +102,7 @@ int main()
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
                     ch = (op1[0]-48)|((op2[0]-48)<<6);
-                    program[counter]=0x3100+((ch)&0x00ff);
+                    program[counter]=0x6100+((ch)&0x00ff);
                     counter++;
 					if ((op3[0]=='0')&&(op3[1]=='x')){
 						program[counter]=hex2int(op3+2)&0xffff;
@@ -123,7 +123,7 @@ int main()
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
                     chch = (op1[0]-48)| ((op2[0]-48)<<6)|((op3[0]-48)<<3);
-                    program[counter]=0x1200+((chch)&0x00ff);
+                    program[counter]=0x7200+((chch)&0x00ff);
                     counter++; 
                     //to be added
             }
@@ -133,7 +133,7 @@ int main()
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
                     ch = (op1[0]-48)|((op2[0]-48)<<6);
-                    program[counter]=0x3200+((ch)&0x00ff);
+                    program[counter]=0x6200+((ch)&0x00ff);
                     counter++;
 					if ((op3[0]=='0')&&(op3[1]=='x')){
 						program[counter]=hex2int(op3+2)&0xffff;
@@ -154,7 +154,7 @@ int main()
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
                     chch = (op1[0]-48)| ((op2[0]-48)<<6)|((op3[0]-48)<<3);
-                    program[counter]=0x1300+((chch)&0x00ff);
+                    program[counter]=0x7300+((chch)&0x00ff);
                     counter++; 
                     //to be added
             }
@@ -164,7 +164,7 @@ int main()
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
                     ch = (op1[0]-48)|((op2[0]-48)<<6);
-                    program[counter]=0x3300+((ch)&0x00ff);
+                    program[counter]=0x6300+((ch)&0x00ff);
                     counter++;
 					if ((op3[0]=='0')&&(op3[1]=='x')){
 						program[counter]=hex2int(op3+2)&0xffff;
@@ -185,7 +185,7 @@ int main()
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
                     chch = (op1[0]-48)| ((op2[0]-48)<<6)|((op3[0]-48)<<3);
-                    program[counter]=0x1400+((chch)&0x00ff);
+                    program[counter]=0x7400+((chch)&0x00ff);
                     counter++;                   
             }
 			else if (strcmp(token,"xori")==0)
@@ -194,7 +194,7 @@ int main()
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
                     ch = (op1[0]-48)|((op2[0]-48)<<6);
-                    program[counter]=0x3400+((ch)&0x00ff);
+                    program[counter]=0x6400+((ch)&0x00ff);
                     counter++;
 					if ((op3[0]=='0')&&(op3[1]=='x')){
 						program[counter]=hex2int(op3+2)&0xffff;
@@ -214,7 +214,7 @@ int main()
                     op1 = strtok(NULL,"\n\t\r ");
                     op2 = strtok(NULL,"\n\t\r ");
                     ch = (op1[0]-48)| ((op2[0]-48)<<6);
-                    program[counter]=0x1500+((ch)&0x00ff);
+                    program[counter]=0x7500+((ch)&0x00ff);
                     counter++;
             }
             else if (strcmp(token,"mov")==0)
@@ -222,21 +222,21 @@ int main()
                     op1 = strtok(NULL,"\n\t\r ");
                     op2 = strtok(NULL,"\n\t\r ");
                     ch = (op1[0]-48)| ((op2[0]-48)<<6);
-                    program[counter]=0x1600+((ch)&0x00ff);
+                    program[counter]=0x7600+((ch)&0x00ff);
                     counter++;
             }
             else if (strcmp(token,"inc")==0)
             {
                     op1 = strtok(NULL,"\n\t\r ");
                     ch = (op1[0]-48)| ((op1[0]-48)<<6);
-                    program[counter]=0x1700+((ch)&0x00ff);
+                    program[counter]=0x7700+((ch)&0x00ff);
                     counter++;
             }
             else if (strcmp(token,"dec")==0)
             {
                     op1 = strtok(NULL,"\n\t\r ");
                     ch = (op1[0]-48)| ((op1[0]-48)<<6);
-                    program[counter]=0x1800+((ch)&0x00ff);
+                    program[counter]=0x7800+((ch)&0x00ff);
                     counter++;
             }
             else //------WHAT IS ENCOUNTERED IS NOT A VALID INSTRUCTION OPCODE

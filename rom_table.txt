@@ -1,7 +1,11 @@
 
 
-state		fetch	ırld	mux	ld	pcınc	imm
-0(fetch)	1	1	0	0	1	0		0x32
-1(alu)		0	0	0	1	0	0		0x4
-2(ldi)		0	0	1	1	1	0		0x0e
-3(aluimm)	0	0	0	1	1	1		0x07
+state		fetch	pcld	pcınc	adrmux	regld	zfld	mux?	memld	ırld	imm 
+0(fetch)	1	0	1	0	0	0	0?	0	1	0	0x282
+1(ldi)		0	0	1	0	1	0	1	0	0	0	0x0a8
+2(ld)		0	0	0	1	1	0	1	0	0	0	0x068									0x
+3(st)		0	0	0	1	0	0	0?	1	0	0	0x044
+4(jz)		0	0	0	0	0	0	0?	0	0	0	0x000
+5(jmp)		0	1	0	0	0	0	0?	0	0	0	0x100
+6(aluimm)?-	0	0	1	0	1	1	0	0	0	1	0x0B1		0x
+7(alu)		0	0	0	0	1	1	0	0	0	0	0x030		
