@@ -55,13 +55,21 @@ int main()
                         printf("unrecognizable LDI offset\n");
                     }        
                     counter++;                                                     //skip to the next memory location 
-            }                                       
+            }
+			else if (strcmp(token,"ld")==0)      //------------LD INSTRUCTION---------------------         
+                {
+                    op1 = strtok(NULL,"\n\t\r ");                //get the 1st operand of ld, which is the destination register
+                    op2 = strtok(NULL,"\n\t\r ");                //get the 2nd operand of ld, which is the source register
+                    ch = (op1[0]-48)| ((op2[0]-48) << 3);        //form bits 11-0 of machine code. 48 is ASCII value of '0'
+                    program[counter]=0x2000+((ch)&0x00ff);       //form the instruction and write it to memory
+                    counter++;                                   //skip to the next empty location in memory
+                }                                       
             else if (strcmp(token,"add")==0) //----------------- ADD -------------------------------
             {
                     op1 = strtok(NULL,"\n\t\r ");    
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
-                    chch = (op1[0]-48)| ((op2[0]-48)<<6)|((op3[0]-48)<<3);
+                    chch = (op1[0]-48)| ((op2[0]-48)<<3)|((op3[0]-48)<<6);
                     program[counter]=0x7000+((chch)&0x00ff);
                     counter++; 
             }
@@ -70,7 +78,7 @@ int main()
             		op1 = strtok(NULL,"\n\t\r ");    
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
-                    ch = (op1[0]-48)|((op2[0]-48)<<6);
+                    ch = (op1[0]-48)|((op2[0]-48)<<3);
                     program[counter]=0x6000+((ch)&0x00ff);
                     counter++;
 					if ((op3[0]=='0')&&(op3[1]=='x')){
@@ -91,7 +99,7 @@ int main()
             		op1 = strtok(NULL,"\n\t\r ");    
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
-                    chch = (op1[0]-48)| ((op2[0]-48)<<6)|((op3[0]-48)<<3);
+                    chch = (op1[0]-48)| ((op2[0]-48)<<3)|((op3[0]-48)<<6);
                     program[counter]=0x7100+((chch)&0x00ff);
                     counter++; 
                     //to be added
@@ -101,7 +109,7 @@ int main()
             		op1 = strtok(NULL,"\n\t\r ");    
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
-                    ch = (op1[0]-48)|((op2[0]-48)<<6);
+                    ch = (op1[0]-48)|((op2[0]-48)<<3);
                     program[counter]=0x6100+((ch)&0x00ff);
                     counter++;
 					if ((op3[0]=='0')&&(op3[1]=='x')){
@@ -122,7 +130,7 @@ int main()
             		op1 = strtok(NULL,"\n\t\r ");    
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
-                    chch = (op1[0]-48)| ((op2[0]-48)<<6)|((op3[0]-48)<<3);
+                    chch = (op1[0]-48)| ((op2[0]-48)<<3)|((op3[0]-48)<<6);
                     program[counter]=0x7200+((chch)&0x00ff);
                     counter++; 
                     //to be added
@@ -132,7 +140,7 @@ int main()
             		op1 = strtok(NULL,"\n\t\r ");    
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
-                    ch = (op1[0]-48)|((op2[0]-48)<<6);
+                    ch = (op1[0]-48)|((op2[0]-48)<<3);
                     program[counter]=0x6200+((ch)&0x00ff);
                     counter++;
 					if ((op3[0]=='0')&&(op3[1]=='x')){
@@ -153,7 +161,7 @@ int main()
             		op1 = strtok(NULL,"\n\t\r ");    
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
-                    chch = (op1[0]-48)| ((op2[0]-48)<<6)|((op3[0]-48)<<3);
+                    chch = (op1[0]-48)| ((op2[0]-48)<<3)|((op3[0]-48)<<6);
                     program[counter]=0x7300+((chch)&0x00ff);
                     counter++; 
                     //to be added
@@ -163,7 +171,7 @@ int main()
             		op1 = strtok(NULL,"\n\t\r ");    
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
-                    ch = (op1[0]-48)|((op2[0]-48)<<6);
+                    ch = (op1[0]-48)|((op2[0]-48)<<3);
                     program[counter]=0x6300+((ch)&0x00ff);
                     counter++;
 					if ((op3[0]=='0')&&(op3[1]=='x')){
@@ -184,7 +192,7 @@ int main()
             		op1 = strtok(NULL,"\n\t\r ");    
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
-                    chch = (op1[0]-48)| ((op2[0]-48)<<6)|((op3[0]-48)<<3);
+                    chch = (op1[0]-48)| ((op2[0]-48)<<3)|((op3[0]-48)<<6);
                     program[counter]=0x7400+((chch)&0x00ff);
                     counter++;                   
             }
@@ -193,7 +201,7 @@ int main()
             		op1 = strtok(NULL,"\n\t\r ");    
                     op2 = strtok(NULL,"\n\t\r ");
                     op3 = strtok(NULL,"\n\t\r ");
-                    ch = (op1[0]-48)|((op2[0]-48)<<6);
+                    ch = (op1[0]-48)|((op2[0]-48)<<3);
                     program[counter]=0x6400+((ch)&0x00ff);
                     counter++;
 					if ((op3[0]=='0')&&(op3[1]=='x')){
@@ -213,7 +221,7 @@ int main()
             {
                     op1 = strtok(NULL,"\n\t\r ");
                     op2 = strtok(NULL,"\n\t\r ");
-                    ch = (op1[0]-48)| ((op2[0]-48)<<6);
+                    ch = (op1[0]-48)| ((op2[0]-48)<<3);
                     program[counter]=0x7500+((ch)&0x00ff);
                     counter++;
             }
@@ -221,21 +229,21 @@ int main()
             {
                     op1 = strtok(NULL,"\n\t\r ");
                     op2 = strtok(NULL,"\n\t\r ");
-                    ch = (op1[0]-48)| ((op2[0]-48)<<6);
+                    ch = (op1[0]-48)| ((op2[0]-48)<<3);
                     program[counter]=0x7600+((ch)&0x00ff);
                     counter++;
             }
             else if (strcmp(token,"inc")==0)
             {
                     op1 = strtok(NULL,"\n\t\r ");
-                    ch = (op1[0]-48)| ((op1[0]-48)<<6);
+                    ch = (op1[0]-48)| ((op1[0]-48)<<3);
                     program[counter]=0x7700+((ch)&0x00ff);
                     counter++;
             }
             else if (strcmp(token,"dec")==0)
             {
                     op1 = strtok(NULL,"\n\t\r ");
-                    ch = (op1[0]-48)| ((op1[0]-48)<<6);
+                    ch = (op1[0]-48)| ((op1[0]-48)<<3);
                     program[counter]=0x7800+((ch)&0x00ff);
                     counter++;
             }
@@ -252,8 +260,10 @@ int main()
      int counter2 = counter;
      int filesize=512;
      
-     for (i=0;i<counter;i++)  //complete this for memory size in verilog
-            fprintf(fp,"%04x\n",program[i]);
+     for (i=0;i<counter;i++){  //complete this for memory size in verilog
+     		printf("%04x\n",program[i]);
+        	fprintf(fp,"%04x\n",program[i]);
+        }
      for(;counter<filesize;counter++){
      	fprintf(fp,"0000\n",program[i]);  	
 	 }    

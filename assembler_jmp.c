@@ -98,7 +98,7 @@ main()
 
 
     fp = fopen("assembly_jmp.txt","r");
-
+	//fp = fopen("assembly.txt","r");
     if (fp != NULL)
     {
         while(fgets(line,sizeof line,fp)!= NULL)  //skip till .code section
@@ -139,16 +139,31 @@ main()
                 {
                     op1 = strtok(NULL,"\n\t\r ");                //get the 1st operand of ld, which is the destination register
                     op2 = strtok(NULL,"\n\t\r ");                //get the 2nd operand of ld, which is the source register
-                    ch = (op1[0]-48)| ((op2[0]-48) << 3);        //form bits 11-0 of machine code. 48 is ASCII value of '0'
-                    program[counter]=0x2000+((ch)&0x00ff);       //form the instruction and write it to memory
-                    counter++;                                   //skip to the next empty location in memory
+                    ch = (op1[0]-48)| ((op2[0]-48) << 6);        //form bits 11-0 of machine code. 48 is ASCII value of '0'
+                    program[counter]=0x2000+((ch)&0x01c7);       //form the instruction and write it to memory and with 0000000111000111
+                    //printf("%04x\n",program[counter]);
+					counter++;                                   //skip to the next empty location in memory
                 }
                 else if (strcmp(token,"st")==0) //-------------ST INSTRUCTION--------------------
                 {
+                	op1 = strtok(NULL,"\n\t\r ");                //get the 1st operand of ld, which is the destination register
+                    op2 = strtok(NULL,"\n\t\r ");                //get the 2nd operand of ld, which is the source register
+                    ch = ((op1[0]-48)<< 3)| ((op2[0]-48) << 6);        //form bits 11-0 of machine code. 48 is ASCII value of '0'
+                    program[counter]=0x3000+((ch)&0x00ff);       //form the instruction and write it to memory
+                    //printf("%04x\n",program[counter]);
+					counter++;                                   //skip to the next empty location in memory
                     //to be added
                 }
                 else if (strcmp(token,"jz")==0) //------------- CONDITIONAL JUMP ------------------
                 {
+                	op1 = strtok(NULL,"\n\t\r ");            //read the label string
+                    jumptable[noofjumps].location = counter;    //write the jz instruction's location into the jumptable 
+                    op2=(char*)malloc(sizeof(op1));         //allocate space for the label                  
+                    strcpy(op2,op1);                //copy the label into the allocated space
+                    jumptable[noofjumps].name=op2;            //point to the label from the jumptable
+                    noofjumps++;                    //skip to the next empty location in jumptable
+                    program[counter]=0x4000;            //write the incomplete instruction (just opcode) to memory
+                    counter++;                    //skip to the next empty location in memory.
                     //to be added
                 }
                 else if (strcmp(token,"jmp")==0)  //-------------- JUMP -----------------------------
@@ -162,55 +177,190 @@ main()
                     program[counter]=0x5000;            //write the incomplete instruction (just opcode) to memory
                     counter++;                    //skip to the next empty location in memory.
                 }                
-                else if (strcmp(token,"add")==0) //----------------- ADD -------------------------------
-                {
-                    op1 = strtok(NULL,"\n\t\r ");    
-                    op2 = strtok(NULL,"\n\t\r ");
-                    op3 = strtok(NULL,"\n\t\r ");
-                    chch = (op1[0]-48)| ((op2[0]-48)<<3)|((op3[0]-48)<<6);  
-                    program[counter]=0x7000+((chch)&0x00ff); 
-                    counter++; 
-                }
-                else if (strcmp(token,"sub")==0)
-                {
-                    //to be added
-                }
-                else if (strcmp(token,"and")==0)
-                {
-                    //to be added
-                }
-                else if (strcmp(token,"or")==0)
-                {
-                    //to be added
-                }
-                else if (strcmp(token,"xor")==0)
-                {
-                    //to be added
-                }                        
-                else if (strcmp(token,"not")==0)
-                {
-                    op1 = strtok(NULL,"\n\t\r ");
-                    op2 = strtok(NULL,"\n\t\r ");
-                    ch = (op1[0]-48)| ((op2[0]-48)<<3);
-                    program[counter]=0x7500+((ch)&0x00ff);  
-                    counter++;
-                }
-                else if (strcmp(token,"mov")==0)
-                {
-                    //to be added
-                }
-                else if (strcmp(token,"inc")==0)
-                {
-                    op1 = strtok(NULL,"\n\t\r ");
-                    ch = (op1[0]-48)| ((op1[0]-48)<<3);
-                    program[counter]=0x7700+((ch)&0x00ff);  
-                    counter++;
-                }
-                else if (strcmp(token,"dec")==0)
-                {
-                                      //to be added
-                }
-                else //------WHAT IS ENCOUNTERED IS NOT AN INSTRUCTION BUT A LABEL. UPDATE THE LABEL TABLE--------
+               else if (strcmp(token,"add")==0) //----------------- ADD -------------------------------
+	            {
+	                    op1 = strtok(NULL,"\n\t\r ");    
+	                    op2 = strtok(NULL,"\n\t\r ");
+	                    op3 = strtok(NULL,"\n\t\r ");
+	                    chch = (op1[0]-48)| ((op2[0]-48)<<3)|((op3[0]-48)<<6);
+	                    program[counter]=0x7000+((chch)&0x01ff);
+	                    counter++; 
+	            }
+	            else if (strcmp(token,"addi")==0)
+	            {
+	            		op1 = strtok(NULL,"\n\t\r ");    
+	                    op2 = strtok(NULL,"\n\t\r ");
+	                    op3 = strtok(NULL,"\n\t\r ");
+	                    ch = (op1[0]-48)|((op2[0]-48)<<3);
+	                    program[counter]=0x6000+((ch)&0x01ff);
+	                    counter++;
+						if ((op3[0]=='0')&&(op3[1]=='x')){
+							program[counter]=hex2int(op3+2)&0xffff;
+						}                                           
+	                    else if ((  (op3[0])=='-') || ((op3[0]>='0')&&(op3[0]<='9'))){
+	                    	program[counter]=atoi(op3)&0xffff;
+						}                                  
+	                    else                                                           
+	                    {                                                               
+	                        printf("unrecognizable ADDI offset\n");
+	                    }        
+	                    counter++; 
+	            	
+				}
+	            else if (strcmp(token,"sub")==0)
+	            {
+	            		op1 = strtok(NULL,"\n\t\r ");    
+	                    op2 = strtok(NULL,"\n\t\r ");
+	                    op3 = strtok(NULL,"\n\t\r ");
+	                    chch = (op1[0]-48)| ((op2[0]-48)<<3)|((op3[0]-48)<<6);
+	                    program[counter]=0x7200+((chch)&0x01ff);
+	                    counter++; 
+	                    //to be added
+	            }
+	            else if (strcmp(token,"subi")==0)
+	            {
+	            		op1 = strtok(NULL,"\n\t\r ");    
+	                    op2 = strtok(NULL,"\n\t\r ");
+	                    op3 = strtok(NULL,"\n\t\r ");
+	                    ch = (op1[0]-48)|((op2[0]-48)<<3);
+	                    program[counter]=0x6200+((ch)&0x01ff);
+	                    counter++;
+						if ((op3[0]=='0')&&(op3[1]=='x')){
+							program[counter]=hex2int(op3+2)&0xffff;
+						}                                           
+	                    else if ((  (op3[0])=='-') || ((op3[0]>='0')&&(op3[0]<='9'))){
+	                    	program[counter]=atoi(op3)&0xffff;
+						}                                  
+	                    else                                                           
+	                    {                                                               
+	                        printf("unrecognizable SUBI offset\n");
+	                    }        
+	                    counter++;
+	            	
+				}
+	            else if (strcmp(token,"and")==0)
+	            {
+	            		op1 = strtok(NULL,"\n\t\r ");    
+	                    op2 = strtok(NULL,"\n\t\r ");
+	                    op3 = strtok(NULL,"\n\t\r ");
+	                    chch = (op1[0]-48)| ((op2[0]-48)<<3)|((op3[0]-48)<<6);
+	                    program[counter]=0x7400+((chch)&0x01ff);
+	                    counter++; 
+	                    //to be added
+	            }
+	            else if (strcmp(token,"andi")==0)
+	            {
+	            		op1 = strtok(NULL,"\n\t\r ");    
+	                    op2 = strtok(NULL,"\n\t\r ");
+	                    op3 = strtok(NULL,"\n\t\r ");
+	                    ch = (op1[0]-48)|((op2[0]-48)<<3);
+	                    program[counter]=0x6400+((ch)&0x01ff);
+	                    counter++;
+						if ((op3[0]=='0')&&(op3[1]=='x')){
+							program[counter]=hex2int(op3+2)&0xffff;
+						}                                           
+	                    else if ((  (op3[0])=='-') || ((op3[0]>='0')&&(op3[0]<='9'))){
+	                    	program[counter]=atoi(op3)&0xffff;
+						}                                  
+	                    else                                                           
+	                    {                                                               
+	                        printf("unrecognizable ANDI offset\n");
+	                    }        
+	                    counter++;
+	            	
+				}
+	            else if (strcmp(token,"or")==0)
+	            {
+	            		op1 = strtok(NULL,"\n\t\r ");    
+	                    op2 = strtok(NULL,"\n\t\r ");
+	                    op3 = strtok(NULL,"\n\t\r ");
+	                    chch = (op1[0]-48)| ((op2[0]-48)<<3)|((op3[0]-48)<<6);
+	                    program[counter]=0x7600+((chch)&0x01ff);
+	                    counter++; 
+	                    //to be added
+	            }
+	            else if (strcmp(token,"ori")==0)
+	            {
+	            		op1 = strtok(NULL,"\n\t\r ");    
+	                    op2 = strtok(NULL,"\n\t\r ");
+	                    op3 = strtok(NULL,"\n\t\r ");
+	                    ch = (op1[0]-48)|((op2[0]-48)<<3);
+	                    program[counter]=0x6600+((ch)&0x01ff);
+	                    counter++;
+						if ((op3[0]=='0')&&(op3[1]=='x')){
+							program[counter]=hex2int(op3+2)&0xffff;
+						}                                           
+	                    else if ((  (op3[0])=='-') || ((op3[0]>='0')&&(op3[0]<='9'))){
+	                    	program[counter]=atoi(op3)&0xffff;
+						}                                  
+	                    else                                                           
+	                    {                                                               
+	                        printf("unrecognizable ORI offset\n");
+	                    }        
+	                    counter++;
+	            	
+				}
+	            else if (strcmp(token,"xor")==0)
+	            {
+	            		op1 = strtok(NULL,"\n\t\r ");    
+	                    op2 = strtok(NULL,"\n\t\r ");
+	                    op3 = strtok(NULL,"\n\t\r ");
+	                    chch = (op1[0]-48)| ((op2[0]-48)<<3)|((op3[0]-48)<<6);
+	                    program[counter]=0x7800+((chch)&0x01ff);
+	                    counter++;                   
+	            }
+				else if (strcmp(token,"xori")==0)
+	            {
+	            		op1 = strtok(NULL,"\n\t\r ");    
+	                    op2 = strtok(NULL,"\n\t\r ");
+	                    op3 = strtok(NULL,"\n\t\r ");
+	                    ch = (op1[0]-48)|((op2[0]-48)<<3);
+	                    program[counter]=0x6800+((ch)&0x01ff);
+	                    counter++;
+						if ((op3[0]=='0')&&(op3[1]=='x')){
+							program[counter]=hex2int(op3+2)&0xffff;
+						}                                           
+	                    else if ((  (op3[0])=='-') || ((op3[0]>='0')&&(op3[0]<='9'))){
+	                    	program[counter]=atoi(op3)&0xffff;
+						}                                  
+	                    else                                                           
+	                    {                                                               
+	                        printf("unrecognizable XORI offset\n");
+	                    }        
+	                    counter++;
+	                    	
+				}                        
+	            else if (strcmp(token,"not")==0)	
+	            {
+	                    op1 = strtok(NULL,"\n\t\r ");
+	                    op2 = strtok(NULL,"\n\t\r ");
+	                    ch = (op1[0]-48)| ((op2[0]-48)<<3);
+	                    program[counter]=0x7e00+((ch)&0x003f);
+	                    counter++;
+	            }
+	            else if (strcmp(token,"mov")==0)
+	            {
+	                    op1 = strtok(NULL,"\n\t\r ");
+	                    op2 = strtok(NULL,"\n\t\r ");
+	                    ch = (op1[0]-48)| ((op2[0]-48)<<3);
+	                    program[counter]=0x7e40+((ch)&0x003f);
+	                    counter++;
+	            }
+	            else if (strcmp(token,"inc")==0)
+	            {
+	                    op1 = strtok(NULL,"\n\t\r ");
+	                    ch = (op1[0]-48)| ((op1[0]-48)<<3);
+	                    program[counter]=0x7e80+((ch)&0x003f);
+	                    counter++;
+	            }
+	            else if (strcmp(token,"dec")==0)
+	            {
+	                    op1 = strtok(NULL,"\n\t\r ");
+	                    ch = (op1[0]-48)| ((op1[0]-48)<<3);
+	                    program[counter]=0x7ec0+((ch)&0x003f);
+	                    counter++;
+	            }
+            	else //------WHAT IS ENCOUNTERED IS NOT AN INSTRUCTION BUT A LABEL. UPDATE THE LABEL TABLE--------
                 {
                     labeltable[nooflabels].location = counter;  //read the label and update labeltable.
                     op1=(char*)malloc(sizeof(token));
@@ -323,7 +473,11 @@ main()
         fclose(fp);
         fp = fopen("RAM","w");
         fprintf(fp,"v2.0 raw\n");
-        for (i=0;i<counter+dataarea;i++)
-            fprintf(fp,"%04x\n",program[i]);
+        printf("\n");
+        for (i=0;i<counter+dataarea;i++){
+			printf("%04x\n",program[i]);
+        	fprintf(fp,"%04x\n",program[i]);
+		}
+            
     }    
 }
