@@ -96,8 +96,8 @@ main()
 //modified when we discover the address of the label or variable that it uses.
 
 
-
-    fp = fopen("assembly_jmp.txt","r");
+	fp = fopen("assembly_psh_pop.txt","r");
+    //fp = fopen("assembly_jmp.txt","r");
 	//fp = fopen("assembly.txt","r");
     if (fp != NULL)
     {
@@ -358,6 +358,20 @@ main()
 	                    op1 = strtok(NULL,"\n\t\r ");
 	                    ch = (op1[0]-48)| ((op1[0]-48)<<3);
 	                    program[counter]=0x7ec0+((ch)&0x003f);
+	                    counter++;
+	            }
+	            else if (strcmp(token,"psh")==0)
+	            {
+	                    op1 = strtok(NULL,"\n\t\r ");
+	                    ch = (7<<3)| ((op1[0]-48)<<6);
+	                    program[counter]=0x8000+((ch)&0x01f8);
+	                    counter++;
+	            }
+	            else if (strcmp(token,"pop")==0)
+	            {
+	                    op1 = strtok(NULL,"\n\t\r ");
+	                    ch = (7<<3)| ((op1[0]-48));
+	                    program[counter]=0x9000+((ch)&0x003f);
 	                    counter++;
 	            }
             	else //------WHAT IS ENCOUNTERED IS NOT AN INSTRUCTION BUT A LABEL. UPDATE THE LABEL TABLE--------

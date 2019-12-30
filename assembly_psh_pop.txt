@@ -1,0 +1,12 @@
+.data 
+           sp: 0x420  
+.code 
+           ldi 7 sp
+	   ld 7 7 
+	   ldi 1 93 
+lpp        psh 1 
+	   dec 1    
+           jz loop 
+           jmp lpp 
+loop       pop 5 
+lp1        jmp lp1
