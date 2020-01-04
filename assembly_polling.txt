@@ -1,24 +1,24 @@
 .data 
-           	sp: 0xA00
-	   	input1: 0xC10
-	   	input2: 0xC20
-	   	output: 0xC30
+           sp: 0xA00
+	   input1: 0xC10
+	   input2: 0xC20
+	   output: 0xC30
 .code 
-	   	ldi 7 sp
-	   	ld 7 7
-	   	ldi 0 input1
-	   	ld 0 0
-	   	ldi 1 input2
-	   	ld 1 1
-		ldi 2 output
-	   	ld 2 2
-while	   	ld 3 0
-	   	add 5 5 3
-	   	ldi 3 0 
-	   	st 2 5
-	   	ld 4 1
-	   	add 5 5 4
-	   	ldi 4 0 
-           	st 2 5
-   		jmp while
-end        	jmp end
+	   ldi 7 sp
+	   ld 7 7
+	   ldi 0 input1
+	   ld 0 0
+	   ldi 1 input2
+	   ld 1 1
+	   ldi 2 output
+	   ld 2 2
+while	   ld 3 0
+	   add 5 5 3
+	   ldi 3 0 
+	   st 2 5
+	   ld 4 1
+	   add 5 5 4
+	   ldi 4 0
+           st 2 5
+	   jmp while
+end        jmp end
