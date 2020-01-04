@@ -1,0 +1,18 @@
+.data 
+           	sp: 0x0600
+	  	keypad: 0x0710
+	   	output: 0x0730
+.code 
+	   	ldi 7 sp
+	   	ld 7 7
+	   	ldi 0 keypad
+	   	ld 0 0
+	   	ldi 1 output
+	   	ld 1 1
+while	   	ld 2 0
+		st 1 2
+	   	jmp while
+end        	jmp end
+
+
+

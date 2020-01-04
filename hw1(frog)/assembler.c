@@ -247,7 +247,7 @@ int main()
 
      fclose(fp);
      fp = fopen("RAM","w");
-     fprintf(fp,"v2.0 raw\n");  //needed for logisim, remove this line for verilog..
+     //fprintf(fp,"v2.0 raw\n");  //needed for logisim, remove this line for verilog..
      int i;
      int counter2 = counter;
      int filesize=512;

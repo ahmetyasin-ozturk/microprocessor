@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -11.187
+TNS   : -66050.026
+
+Type  : Slow 1200mV 85C Model Setup 'keypad:kp|clk1[14]'
+Slack : -1.719
+TNS   : -8.755
+
+Type  : Slow 1200mV 85C Model Setup 'sev_seg_disp:monitor1|clk1[15]'
+Slack : 0.220
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.346
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'sev_seg_disp:monitor1|clk1[15]'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'keypad:kp|clk1[14]'
+Slack : 0.566
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -8392.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'keypad:kp|clk1[14]'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'sev_seg_disp:monitor1|clk1[15]'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -9.986
+TNS   : -58846.724
+
+Type  : Slow 1200mV 0C Model Setup 'keypad:kp|clk1[14]'
+Slack : -1.434
+TNS   : -7.113
+
+Type  : Slow 1200mV 0C Model Setup 'sev_seg_disp:monitor1|clk1[15]'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.306
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'sev_seg_disp:monitor1|clk1[15]'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'keypad:kp|clk1[14]'
+Slack : 0.509
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -8392.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'keypad:kp|clk1[14]'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'sev_seg_disp:monitor1|clk1[15]'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -6.157
+TNS   : -35010.892
+
+Type  : Fast 1200mV 0C Model Setup 'keypad:kp|clk1[14]'
+Slack : -0.526
+TNS   : -2.139
+
+Type  : Fast 1200mV 0C Model Setup 'sev_seg_disp:monitor1|clk1[15]'
+Slack : 0.563
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'sev_seg_disp:monitor1|clk1[15]'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'keypad:kp|clk1[14]'
+Slack : 0.301
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -8872.659
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'keypad:kp|clk1[14]'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'sev_seg_disp:monitor1|clk1[15]'
+Slack : -1.000
+TNS   : -6.000
+
+------------------------------------------------------------

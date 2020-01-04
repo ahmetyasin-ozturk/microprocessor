@@ -95,7 +95,7 @@ main()
 //Hence, the location of the ldi instructions must be kept, and these instructions must be 
 //modified when we discover the address of the label or variable that it uses.
 
-
+	//fp = fopen("program.txt","r");
 	fp = fopen("assembly_polling.txt","r");
 	//fp = fopen("assembly_psh_pop.txt","r");
     //fp = fopen("assembly_jmp.txt","r");
@@ -488,10 +488,17 @@ main()
         fp = fopen("RAM","w");
         fprintf(fp,"v2.0 raw\n");
         printf("\n");
+        
+        
+        //int filesize=3072;					//3k
+        int filesize=512;					//512
         for (i=0;i<counter+dataarea;i++){
 			printf("%04x\n",program[i]);
         	fprintf(fp,"%04x\n",program[i]);
 		}
+		for(;counter+dataarea<filesize;counter++){
+     	fprintf(fp,"0000\n",program[i]);  
+	 }    
             
     }    
 }
