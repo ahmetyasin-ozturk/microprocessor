@@ -1,0 +1,244 @@
+.data 
+           	sp: 0x0170
+	  	keypad: 0x0710
+	   	output: 0x0730
+		digits: .space 4
+		counter: 0x0000
+		input1: 0x0000
+		operation: 0x0000
+	   	A: 10
+	   	B: 11
+	   	E: 14
+	   	F: 15
+.code 
+	   	ldi 7 sp
+	   	ld 7 7
+	   	ldi 1 output
+	   	ld 1 1
+	   	ldi 6 0
+	   	st 1 6
+		ldi 3 digits
+		ldi 5 0x0000
+input		ldi 0 keypad
+	   	ld 0 0
+		inc 0
+		ld 2 0
+		mov 2 2
+		jz input
+		dec 0
+		ld 2 0
+		ldi 4 0x0010
+		sub 4 4 2
+		jz input
+	   	ldi 4 A
+	  	ld 4 4
+	   	sub 4 4 2
+   	   	jz a_match
+		ldi 4 B
+	  	ld 4 4
+		sub 4 4 2
+		jz b_match
+		ldi 4 E
+	  	ld 4 4
+		sub 4 4 2
+		jz e_match
+		ldi 4 F
+	  	ld 4 4
+		sub 4 4 2
+		jz f_match
+		ldi 3 digits
+		ldi 4 counter
+		ld 4 4
+		add 3 3 4
+		st 3 2
+display_inp	ldi 3 counter
+		ld 4 3
+		ldi 3 0x0000
+		sub 3 3 4
+		jz first
+		ldi 3 0x0001
+		sub 3 3 4
+		jz second
+		ldi 3 0x0002
+		sub 3 3 4
+		jz third		
+		ldi 3 0x0003
+		sub 3 3 4
+		jz fourth
+first		ldi 4 digits
+		ld 4 4
+		ldi 5 0x0000
+		add 5 5 4
+		ldi 4 counter		
+		ld 3 4
+		inc 3
+		st 4 3
+		jmp shift
+second		ldi 4 digits
+		ld 4 4
+		ldi 3 0x0010
+		ldi 5 0x0000
+		mov 4 4
+		jz loop2_1
+loop2_2		add 5 5 3
+		dec 4
+		jz loop2_1
+		jmp loop2_2
+loop2_1		ldi 4 digits
+		inc 4
+		ld 4 4
+		add 5 5 4
+		ldi 3 counter
+		ld 4 3
+		inc 4
+		st 3 4
+		jmp shift
+third		ldi 4 digits
+		ld 4 4
+		ldi 3 0x0100
+		ldi 5 0x0000
+		mov 4 4
+		jz loop3_2
+loop3_3		add 5 5 3
+		dec 4
+		jz loop3_2
+		jmp loop3_3
+loop3_2		ldi 4 digits
+		inc 4
+		ld 4 4
+		ldi 3 0x0010
+		mov 4 4
+		jz loop3_1
+loop3_2_1	add 5 5 3
+		dec 4
+		jz loop3_1
+		jmp loop3_2_1
+loop3_1		ldi 4 digits
+		inc 4
+		inc 4
+		ld 4 4
+		add 5 5 4
+		ldi 3 counter
+		ld 4 3
+		inc 4
+		st 3 4
+		jmp shift
+fourth		ldi 4 digits
+		ld 4 4
+		ldi 3 0x1000
+		ldi 5 0x0000
+		mov 4 4
+		jz loop4_3
+loop4_4		add 5 5 3
+		dec 4
+		jz loop4_3
+		jmp loop4_4
+loop4_3		ldi 4 digits
+		inc 4
+		ld 4 4
+		ldi 3 0x0100
+		mov 4 4
+		jz loop4_2
+loop4_3_1	add 5 5 3
+		dec 4
+		jz loop4_2
+		jmp loop4_3_1
+loop4_2		ldi 4 digits
+		inc 4
+		inc 4
+		ld 4 4
+		ldi 3 0x0010
+		mov 4 4
+		jz loop4_1
+loop4_2_1	add 5 5 3
+		dec 4
+		jz loop4_1
+		jmp loop4_2_1
+loop4_1		ldi 4 digits
+		inc 4
+		inc 4
+		inc 4
+		ld 4 4
+		add 5 5 4
+		ldi 3 counter
+		ld 4 3
+		inc 4
+		st 3 4
+		jmp shift	
+shift		st 1 5
+		mov 4 6
+		add 6 6 4
+		add 6 6 4
+		add 6 6 4
+		add 6 6 4
+		add 6 6 4
+		add 6 6 4
+		add 6 6 4
+		add 6 6 4
+		add 6 6 4
+		add 6 6 2
+		jmp input
+a_match		ldi 3 input1
+		st 3 6
+		ldi 3 operation
+		ldi 4 0x0001
+		st 3 4
+		ldi 5 0x0000
+		mov 6 5
+		ldi 2 counter
+		st 2 5
+		st 1 5
+		jmp input
+b_match		ldi 3 input1
+		st 3 6
+		ldi 3 operation
+		ldi 4 0x0002
+		st 3 4
+		ldi 5 0x0000
+		mov 6 5
+		ldi 2 counter
+		st 2 5
+		st 1 5
+		jmp input
+e_match		ldi 3 input1
+		ld 3 3
+		ldi 4 operation
+		ld 4 4
+		ldi 5 0x0001
+		sub 5 5 4
+		jz adder
+		ldi 5 0x0002
+		sub 5 5 4
+		jz subtract
+adder		add 5 3 6
+		st 1 5
+		jmp clear
+subtract	sub 5 3 6
+		st 1 5
+		jmp clear
+clear		ldi 3 0x0000
+		ldi 2 counter
+		st 2 3
+		ldi 2 input1
+		st 2 3
+		ldi 2 operation
+		st 2 3
+		ldi 2 0x0000
+		ldi 4 0x0000
+		ldi 5 0x0000
+		ldi 6 0x0000
+		jmp input
+f_match		ldi 3 0x0000
+		st 1 3
+		ldi 2 counter
+		st 2 3
+		ldi 2 input1
+		st 2 3
+		ldi 2 operation
+		st 2 3
+		ldi 2 0x0000
+		ldi 4 0x0000
+		ldi 5 0x0000
+		ldi 6 0x0000
+		jmp input
+end        	jmp end

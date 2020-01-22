@@ -1,0 +1,46 @@
+
+module bird_CPU();
+
+
+
+reg [15:0] memory[0:3071];
+reg [3:0] state;
+
+
+
+
+localparam  FETCH = 4'b0000;//TODO: update edilecek
+localparam  LDI = 4'b0001;
+localparam  LD = 4'b0010;
+localparam  ST = 4'b0011;
+localparam  JZ = 4'b0100;
+localparam  JUMP = 4'b0101;
+localparam  ALUIMM = 4'b0110;
+localparam  ALU = 4'b0111;
+localparam  PUSH = 4'b1000;
+localparam  POP1 = 4'b1001;
+localparam  CALL = 4'b1010;
+localparam  RET1 = 4'b1011;
+localparam  POP2 = 4'b1100;
+localparam  RET2 = 4'b1101;
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ initial begin
+ 
+     $readmemh("RAM", memory);  //must be exactly 3k locations
+     state = FETCH;  
+ end 
+ 
+ endmodule
+ 
+ 
+ 
+ 
+
+ 

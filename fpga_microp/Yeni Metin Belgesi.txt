@@ -1,0 +1,119 @@
+while
+	*	input = 0
+	*	counter = 0
+	while (counter <= 4)
+		*	get keypad data (k_d)
+		*	if(k_d == A || k_d == B || k_d == C || k_d == D || k_d == * (E) || k_d == # (F))   
+		*	shift keypad data, amount of(counter) times (base 10) ((( Which means multiply it with 10 )))
+		*	sum the shifted value with the input
+		*	print it on the display
+		*	counter++
+	
+
+
+.data 
+           	sp: 0x0110
+		address: 0x0090
+	  	keypad: 0x0710
+	   	output: 0x0730
+	   	A: 10
+	   	B: 11
+	   	E: 14
+	   	F: 15
+.code 
+	   	ldi 7 sp
+	   	ld 7 7
+	   	ldi 1 address
+	   	ld 1 1
+		ldi 4 0
+	   	ldi 6 0
+		ldi 2 3
+		mov 5 6
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 2
+		inc 4
+		st 1 2
+		inc 1
+		ldi 2 1
+		mov 5 6
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 2
+		inc 4
+		st 1 2
+		inc 1
+		ldi 2 2
+		mov 5 6
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 5
+		add 6 6 2
+		inc 4
+		st 1 2
+		inc 1
+		ldi 6 0
+		ldi 1 address
+		ld 1 1
+baseend		dec 4
+		ldi 3 3
+		sub 3 3 4
+		jz fourth
+		ldi 3 2
+		sub 3 3 4
+		jz third
+		ldi 3 1
+		sub 3 3 4
+		jz second
+		ldi 3 0
+		sub 3 3 4
+		jz first
+fourth		ld 5 1
+		inc 1
+		ldi 3 0x1000
+loop4		add 6 6 3
+		dec 5
+		jz baseend
+		jmp loop4
+third		ld 5 1
+		inc 1
+		ldi 3 0x0100
+loop3		add 6 6 3
+		dec 5
+		jz baseend
+		jmp loop3
+second		ld 5 1
+		inc 1
+		ldi 3 0x0010
+loop2		add 6 6 3
+		dec 5
+		jz baseend
+		jmp loop2
+first		ld 5 1
+		inc 1
+		ldi 3 0x0001
+loop1		add 6 6 3
+		dec 5
+		jz end	
+		jmp loop1
+end        	jmp end

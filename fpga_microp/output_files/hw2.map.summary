@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Jan 22 17:06:43 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : hw2
+Top-level Entity Name : runner
+Family : Cyclone IV E
+Total logic elements : 14,929
+    Total combinational functions : 8,047
+    Dedicated logic registers : 8,450
+Total registers : 8450
+Total pins : 31
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

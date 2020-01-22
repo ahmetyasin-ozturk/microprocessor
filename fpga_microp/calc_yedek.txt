@@ -1,0 +1,85 @@
+.data 
+           	sp: 0x0600
+	  	keypad: 0x0710
+	   	output: 0x0730
+	   	A: 10
+	   	B: 11
+	   	E: 14
+	   	F: 15
+.code 
+	   	ldi 7 sp
+	   	ld 7 7
+	   	ldi 0 keypad
+	   	ld 0 0
+	   	ldi 1 output
+	   	ld 1 1
+	   	ldi 6 0
+	   	st 1 6
+input	   	ld 2 0
+		ldi 4 15
+		sub 4 4 2
+		jz input
+	   	ldi 4 A
+	  	ld 4 4
+	   	sub 3 2 4
+   	   	jz a_match
+		ldi 4 B
+	  	ld 4 4
+		sub 3 2 4
+		jz b_match
+		ldi 4 E
+	  	ld 4 4
+		sub 3 2 4
+		jz e_match
+		ldi 4 F
+	  	ld 4 4
+		sub 3 2 4
+		jz f_match
+shift		add 6 6 6
+		add 6 6 6
+		add 6 6 6
+		add 6 6 6
+		add 6 6 6
+		add 6 6 6
+		add 6 6 6
+		add 6 6 6
+		add 6 6 6
+		add 6 6 2
+print		st 1 6
+	   	jmp input
+a_match		psh 6
+		ldi 2 1
+		psh 2
+		st 1 6
+		ldi 2 0
+		ldi 3 0
+		ldi 4 0
+		ldi 5 0
+		ldi 6 0
+		jmp input
+b_match		psh 6
+		ldi 2 2
+		psh 2
+		ldi 2 0
+		ldi 3 0
+		ldi 4 0
+		ldi 5 0
+		ldi 6 0
+		jmp input
+e_match		pop 3
+		ldi 5 2
+		sub 4 3 5
+		jz subtr
+adder		pop 5
+		add 6 5 6
+		jmp print
+subtr		pop 5
+		sub 6 5 6
+		jmp print		
+f_match		ldi 2 0
+		ldi 3 0
+		ldi 4 0
+		ldi 5 0
+		ldi 6 0
+		jmp print
+end        	jmp end

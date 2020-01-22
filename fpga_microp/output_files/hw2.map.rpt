@@ -1,0 +1,419 @@
+Analysis & Synthesis report for hw2
+Wed Jan 22 17:06:43 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jan 22 17:06:43 2020       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; hw2                                         ;
+; Top-level Entity Name              ; runner                                      ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 14,929                                      ;
+;     Total combinational functions  ; 8,047                                       ;
+;     Dedicated logic registers      ; 8,450                                       ;
+; Total registers                    ; 8450                                        ;
+; Total pins                         ; 31                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; runner             ; hw2                ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.2%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+---------+
+; bird_keypad_display.v            ; yes             ; User Verilog HDL File        ; C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v ;         ;
+; ram                              ; yes             ; Auto-Found Unspecified File  ; C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/ram                   ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 14,929    ;
+;                                             ;           ;
+; Total combinational functions               ; 8047      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 5851      ;
+;     -- 3 input functions                    ; 677       ;
+;     -- <=2 input functions                  ; 1519      ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 7974      ;
+;     -- arithmetic mode                      ; 73        ;
+;                                             ;           ;
+; Total registers                             ; 8450      ;
+;     -- Dedicated logic registers            ; 8450      ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 31        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 8389      ;
+; Total fan-out                               ; 52373     ;
+; Average fan-out                             ; 3.16      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                 ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+--------------+
+; |runner                    ; 8047 (7483)         ; 8450 (8208)               ; 0           ; 0            ; 0       ; 0         ; 31   ; 0            ; |runner                       ; runner       ; work         ;
+;    |bird_CPU:cpu|          ; 461 (461)           ; 161 (161)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |runner|bird_CPU:cpu          ; bird_CPU     ; work         ;
+;    |keypad:kp|             ; 69 (69)             ; 60 (60)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |runner|keypad:kp             ; keypad       ; work         ;
+;    |sev_seg_disp:monitor1| ; 34 (34)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |runner|sev_seg_disp:monitor1 ; sev_seg_disp ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++----------------------------------------+--------------------------------------------+
+; Register name                          ; Reason for Removal                         ;
++----------------------------------------+--------------------------------------------+
+; bird_CPU:cpu|ir[12..15]                ; Stuck at GND due to stuck port data_in     ;
+; sev_seg_disp:monitor1|clk1[0]          ; Merged with keypad:kp|clk1[0]              ;
+; keypad:kp|clk1[1]                      ; Merged with sev_seg_disp:monitor1|clk1[1]  ;
+; keypad:kp|clk1[2]                      ; Merged with sev_seg_disp:monitor1|clk1[2]  ;
+; keypad:kp|clk1[3]                      ; Merged with sev_seg_disp:monitor1|clk1[3]  ;
+; keypad:kp|clk1[4]                      ; Merged with sev_seg_disp:monitor1|clk1[4]  ;
+; keypad:kp|clk1[5]                      ; Merged with sev_seg_disp:monitor1|clk1[5]  ;
+; keypad:kp|clk1[6]                      ; Merged with sev_seg_disp:monitor1|clk1[6]  ;
+; keypad:kp|clk1[7]                      ; Merged with sev_seg_disp:monitor1|clk1[7]  ;
+; keypad:kp|clk1[8]                      ; Merged with sev_seg_disp:monitor1|clk1[8]  ;
+; keypad:kp|clk1[9]                      ; Merged with sev_seg_disp:monitor1|clk1[9]  ;
+; keypad:kp|clk1[10]                     ; Merged with sev_seg_disp:monitor1|clk1[10] ;
+; keypad:kp|clk1[11]                     ; Merged with sev_seg_disp:monitor1|clk1[11] ;
+; keypad:kp|clk1[12]                     ; Merged with sev_seg_disp:monitor1|clk1[12] ;
+; keypad:kp|clk1[13]                     ; Merged with sev_seg_disp:monitor1|clk1[13] ;
+; sev_seg_disp:monitor1|clk1[16..25]     ; Lost fanout                                ;
+; keypad:kp|clk1[15..25]                 ; Lost fanout                                ;
+; Total Number of Removed Registers = 39 ;                                            ;
++----------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 8450  ;
+; Number of registers using Synchronous Clear  ; 1     ;
+; Number of registers using Synchronous Load   ; 30    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8369  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; sev_seg_disp:monitor1|grounds[0]        ; 2       ;
+; display1_data[6]                        ; 1       ;
+; display1_data[10]                       ; 1       ;
+; display1_data[14]                       ; 1       ;
+; display1_data[2]                        ; 1       ;
+; display1_data[11]                       ; 1       ;
+; display1_data[7]                        ; 1       ;
+; display1_data[15]                       ; 1       ;
+; display1_data[3]                        ; 1       ;
+; keypad:kp|rowwrite[0]                   ; 12      ;
+; keypad:kp|rowwrite[1]                   ; 13      ;
+; keypad:kp|rowwrite[2]                   ; 11      ;
+; Total number of inverted registers = 12 ;         ;
++-----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 9:1                ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |runner|bird_CPU:cpu|pc[14]         ;
+; 9:1                ; 12 bits   ; 72 LEs        ; 12 LEs               ; 60 LEs                 ; Yes        ; |runner|bird_CPU:cpu|pc[10]         ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 16 LEs               ; 144 LEs                ; Yes        ; |runner|bird_CPU:cpu|regbank[6][13] ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 16 LEs               ; 144 LEs                ; Yes        ; |runner|bird_CPU:cpu|regbank[5][3]  ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 16 LEs               ; 144 LEs                ; Yes        ; |runner|bird_CPU:cpu|regbank[4][15] ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 16 LEs               ; 144 LEs                ; Yes        ; |runner|bird_CPU:cpu|regbank[3][8]  ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 16 LEs               ; 144 LEs                ; Yes        ; |runner|bird_CPU:cpu|regbank[2][5]  ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 16 LEs               ; 144 LEs                ; Yes        ; |runner|bird_CPU:cpu|regbank[1][2]  ;
+; 16:1               ; 16 bits   ; 160 LEs       ; 16 LEs               ; 144 LEs                ; Yes        ; |runner|bird_CPU:cpu|regbank[0][3]  ;
+; 11:1               ; 12 bits   ; 84 LEs        ; 24 LEs               ; 60 LEs                 ; Yes        ; |runner|bird_CPU:cpu|regbank[7][10] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |runner|bird_CPU:cpu|regbank[7][12] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |runner|sev_seg_disp:monitor1|Mux2  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |runner|keypad:kp|keyread[3]        ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |runner|bird_CPU:cpu|Mux150         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |runner|bird_CPU:cpu|Mux180         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |runner|din[4]                      ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |runner|bird_CPU:cpu|Mux191         ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |runner|bird_CPU:cpu|Add0           ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; No         ; |runner|bird_CPU:cpu|Mux166         ;
+; 10:1               ; 12 bits   ; 72 LEs        ; 24 LEs               ; 48 LEs                 ; No         ; |runner|bird_CPU:cpu|Mux169         ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |runner|bird_CPU:cpu|Mux232         ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |runner|bird_CPU:cpu|Add4           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; No         ; |runner|bird_CPU:cpu|Add4           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; No         ; |runner|bird_CPU:cpu|Add0           ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; No         ; |runner|bird_CPU:cpu|Add0           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 31                          ;
+; cycloneiii_ff         ; 8450                        ;
+;     ENA               ; 8340                        ;
+;     ENA SLD           ; 29                          ;
+;     SCLR SLD          ; 1                           ;
+;     plain             ; 80                          ;
+; cycloneiii_lcell_comb ; 8053                        ;
+;     arith             ; 73                          ;
+;         2 data inputs ; 29                          ;
+;         3 data inputs ; 44                          ;
+;     normal            ; 7980                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1480                        ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 633                         ;
+;         4 data inputs ; 5851                        ;
+;                       ;                             ;
+; Max LUT depth         ; 16.00                       ;
+; Average LUT depth     ; 10.07                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:22     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Jan 22 17:06:09 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off hw2 -c hw2
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 5 design units, including 5 entities, in source file bird_keypad_display.v
+    Info (12023): Found entity 1: runner File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+    Info (12023): Found entity 2: bird_CPU File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 112
+    Info (12023): Found entity 3: sev_seg_disp_slowed File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 364
+    Info (12023): Found entity 4: sev_seg_disp File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 421
+    Info (12023): Found entity 5: keypad File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 486
+Info (12127): Elaborating entity "runner" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at bird_keypad_display.v(12): object "DEBUG" assigned a value but never read File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 12
+Warning (10230): Verilog HDL assignment warning at bird_keypad_display.v(25): truncated value with size 32 to match size of target (26) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 25
+Warning (10230): Verilog HDL assignment warning at RAM(311): truncated value with size 24 to match size of target (16) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/RAM Line: 311
+Warning (10034): Output port "grounds2" at bird_keypad_display.v(1) has no driver File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+Warning (10034): Output port "display2" at bird_keypad_display.v(1) has no driver File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+Info (12128): Elaborating entity "bird_CPU" for hierarchy "bird_CPU:cpu" File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 35
+Warning (10230): Verilog HDL assignment warning at bird_keypad_display.v(150): truncated value with size 32 to match size of target (16) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 150
+Warning (10230): Verilog HDL assignment warning at bird_keypad_display.v(157): truncated value with size 32 to match size of target (16) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 157
+Warning (10230): Verilog HDL assignment warning at bird_keypad_display.v(181): truncated value with size 32 to match size of target (16) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 181
+Warning (10230): Verilog HDL assignment warning at bird_keypad_display.v(185): truncated value with size 32 to match size of target (16) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 185
+Warning (10230): Verilog HDL assignment warning at bird_keypad_display.v(195): truncated value with size 32 to match size of target (16) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 195
+Warning (10230): Verilog HDL assignment warning at bird_keypad_display.v(199): truncated value with size 32 to match size of target (16) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 199
+Warning (10230): Verilog HDL assignment warning at bird_keypad_display.v(290): truncated value with size 16 to match size of target (12) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 290
+Info (12128): Elaborating entity "sev_seg_disp" for hierarchy "sev_seg_disp:monitor1" File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 42
+Warning (10230): Verilog HDL assignment warning at bird_keypad_display.v(435): truncated value with size 32 to match size of target (2) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 435
+Warning (10230): Verilog HDL assignment warning at bird_keypad_display.v(439): truncated value with size 32 to match size of target (26) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 439
+Info (12128): Elaborating entity "keypad" for hierarchy "keypad:kp" File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 52
+Warning (10230): Verilog HDL assignment warning at bird_keypad_display.v(508): truncated value with size 32 to match size of target (26) File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 508
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "memory" is uninferred due to asynchronous read logic File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 4
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "grounds2[0]" is stuck at GND File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+    Warning (13410): Pin "grounds2[1]" is stuck at GND File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+    Warning (13410): Pin "grounds2[2]" is stuck at GND File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+    Warning (13410): Pin "grounds2[3]" is stuck at GND File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+    Warning (13410): Pin "display2[0]" is stuck at GND File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+    Warning (13410): Pin "display2[1]" is stuck at GND File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+    Warning (13410): Pin "display2[2]" is stuck at GND File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+    Warning (13410): Pin "display2[3]" is stuck at GND File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+    Warning (13410): Pin "display2[4]" is stuck at GND File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+    Warning (13410): Pin "display2[5]" is stuck at GND File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+    Warning (13410): Pin "display2[6]" is stuck at GND File: C:/Users/ahmet/Documents/GitHub/microprocessor/fpga_microp/bird_keypad_display.v Line: 1
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 21 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 15008 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 26 output pins
+    Info (21061): Implemented 14977 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4850 megabytes
+    Info: Processing ended: Wed Jan 22 17:06:43 2020
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:47
+
+
