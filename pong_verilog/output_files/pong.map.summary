@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Jan 23 14:23:34 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : pong
+Top-level Entity Name : pong_top_an
+Family : Cyclone IV E
+Total logic elements : 331
+    Total combinational functions : 330
+    Dedicated logic registers : 96
+Total registers : 96
+Total pins : 8
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

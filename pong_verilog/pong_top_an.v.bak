@@ -1,0 +1,24 @@
+module pong_top_an
+(
+	input wire clk, reset,
+	input wire [1:0] btn,
+	output wire hsync , vsync,
+	output wire [2:0] rgb
+);
+
+
+// signal declaration
+wire [9:0] pixel-x, pixel-y;
+wire video-on , pixel-tick;
+reg [2:0] rgb_reg;
+wire [2:0] rgb_next;
+I5 // body
+// instantiate vga svnc circuit
+vga-sync vsync-unit
+(. clk(clk), .reset (reset), . hsync (hsync), .vs~nc(vs~nc) 9
+.video-on(video-on), .p-tick(pixel-tick),
+20 .pixel-x(pixe1-x), .pixel_y(pixel-y));
+// instantiate graphic generator
+pong-graph-animate pong-graph-an-unit
+( . clk (clk) , .reset (reset 1, . btn (btn) ,
+25 .video-on(video-on), .pix-x(pixe1-x), 

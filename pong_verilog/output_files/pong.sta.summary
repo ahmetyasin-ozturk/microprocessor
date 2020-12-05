@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -6.066
+TNS   : -343.152
+
+Type  : Slow 1200mV 85C Model Setup 'pong_graph_animate:animated|BAR_Y_SIZE[0]'
+Slack : -4.974
+TNS   : -4.974
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.344
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pong_graph_animate:animated|BAR_Y_SIZE[0]'
+Slack : 0.967
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -99.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pong_graph_animate:animated|BAR_Y_SIZE[0]'
+Slack : -1.061
+TNS   : -61.668
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -5.370
+TNS   : -299.579
+
+Type  : Slow 1200mV 0C Model Setup 'pong_graph_animate:animated|BAR_Y_SIZE[0]'
+Slack : -4.446
+TNS   : -4.446
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pong_graph_animate:animated|BAR_Y_SIZE[0]'
+Slack : 1.015
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -99.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pong_graph_animate:animated|BAR_Y_SIZE[0]'
+Slack : -0.934
+TNS   : -44.505
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -3.163
+TNS   : -157.730
+
+Type  : Fast 1200mV 0C Model Setup 'pong_graph_animate:animated|BAR_Y_SIZE[0]'
+Slack : -3.007
+TNS   : -3.007
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pong_graph_animate:animated|BAR_Y_SIZE[0]'
+Slack : 0.618
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -103.153
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pong_graph_animate:animated|BAR_Y_SIZE[0]'
+Slack : -0.517
+TNS   : -12.296
+
+------------------------------------------------------------

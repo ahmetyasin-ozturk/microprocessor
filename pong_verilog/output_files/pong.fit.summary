@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Jan 23 14:23:41 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : pong
+Top-level Entity Name : pong_top_an
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 330 / 22,320 ( 1 % )
+    Total combinational functions : 330 / 22,320 ( 1 % )
+    Dedicated logic registers : 96 / 22,320 ( < 1 % )
+Total registers : 96
+Total pins : 8 / 154 ( 5 % )
+Total virtual pins : 0
+Total memory bits : 0 / 608,256 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
